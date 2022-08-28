@@ -31,7 +31,7 @@ function add(num1, num2) {
  * @returns {string} - a kapott üzenet.
  */
 function logTheString(message) {
-    return;
+    return `message`;
 }
 
 /**
@@ -43,7 +43,7 @@ function logTheString(message) {
  * @desc Példa a név beszúrására: `Howdy ${userName}!`
  */
 function getGreeting(name) {
-    return;
+    return `Hello ${name}!`;
 }
 
 /**
@@ -55,7 +55,7 @@ function getGreeting(name) {
  */
 function getTitleGreeting(name) {
     const titleCaseName = name[0].toUpperCase() + name.slice(1);
-    return;
+    return `Hello ${titleCaseName}!`;
 }
 
 /**
@@ -66,7 +66,8 @@ function getTitleGreeting(name) {
  * @returns {string} `Product: <name>!`, <name> = productName nagy kezdőbetűvel.
  */
 function getProductDetails(productName) {
-    // 
+    const titleCaseProductName = productName[0].toUpperCase() + productName.slice(1);
+    return `Product: ${titleCaseProductName}!`;
 }
 
 /**
@@ -78,7 +79,7 @@ function getProductDetails(productName) {
  */
 const getBruttoPrice = function(price) {
     const bruttoPrice = price * 1.27;
-    return;
+    return bruttoPrice;
 }
 
 /**
@@ -91,7 +92,7 @@ const getBruttoPrice = function(price) {
  */
 const getRoundedBruttoPrice = function(price) {
     const bruttoPrice = Math.round(price * 1.27);
-    return;
+    return bruttoPrice;
 }
 
 /**
@@ -103,8 +104,11 @@ const getRoundedBruttoPrice = function(price) {
  * @returns {number} a price 1.35-szöröse, egészre kerekítve.
  */
 const getSellPrice = function(price) {
-    // 
-}
+    const bruttoprise = Math.round(price * 1.35);
+    return bruttoprise;
+    
+    }
+
 
 /**
  * 8. feladat
@@ -115,7 +119,8 @@ const getSellPrice = function(price) {
  * @returns {number} a price 1.35-szörösének a 0.9-szerese, egészre kerekítve.
  */
 const getActionPrice = function(price) {
-    // 
+    const bruttoprise = Math.round(price * 1.35 * 0.9);
+    return bruttoprise; 
 }
 
 /**
@@ -129,7 +134,9 @@ const getActionPrice = function(price) {
  * <stock> = a product.stock
  */
 const getProductDescrition = product => {
-    // 
+    let productName =  product.name[0].toUpperCase() + product.name.slice(1);
+    let productPrice = Math.round(price * 1.35);
+    return `${productName}, ${productPrice}, in stock: ${product.stock}`;
 }
 
 /**
@@ -145,6 +152,10 @@ const getProductDescrition = product => {
  * @desc EXPORTÁLNI KELL A FÜGGVÉNYT!
  */
 
+const getBio = member => {
+    let memberName = member.name[0].toUpperCase() + member.name.slice(1);
+    return `${memberName}, ${member.age} years old, live in: ${member.city}.`;
+}
 
 
 /**
@@ -161,6 +172,8 @@ const getProductDescrition = product => {
  */
 const getMemberDesc = (member = {name: 'jimmy', birthYear: 2000, city: 'SF'}) => {
     const age = new Date().getFullYear() - member.birthYear;
+    const memberName = member.name[0].toUpperCase() + member.name.slice(1);
+    return `${memberName}, ${age} years old, live in: ${member.city}.`;
 }
 
 /**
@@ -178,6 +191,12 @@ const getMemberDesc = (member = {name: 'jimmy', birthYear: 2000, city: 'SF'}) =>
  * @desc EXPORTÁLNI KELL A FÜGGVÉNYT!
  */
 
+const getCarDetails = (car = {manufacturer: 'ford', year: 2010, type: 'fiesta'}) => {
+    const carName = car.manufacturer[0].toUpperCase() + car.manufacturer.slice(1);
+    const carAge = new Date().getFullYear() - car.birthYear;
+    const carType = car.type[0].toUpperCase() + car.type.slice(1);
+    return `${carName}, ${carAge} years old, type: ${carType}.`
+}
 
 export {
     logTheString,
