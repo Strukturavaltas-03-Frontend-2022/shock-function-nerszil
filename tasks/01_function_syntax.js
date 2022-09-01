@@ -135,8 +135,8 @@ const getActionPrice = function(price) {
  */
 const getProductDescrition = product => {
     let productName =  product.name[0].toUpperCase() + product.name.slice(1);
-    let productPrice = Math.round(price * 1.35);
-    return `${productName}, ${productPrice}, in stock: ${product.stock}`;
+    let productPrice = Math.round(product.price * 1.35);
+    return `${productName}, $${productPrice}, in stock: ${product.stock}`;
 }
 
 /**
